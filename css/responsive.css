@@ -424,7 +424,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 10vh;
+  height: 8vh;
   width: 100%;
   z-index: 1000;
   background: #111827;
@@ -446,7 +446,6 @@
   }
 
   #themeToggle{
-
     position: fixed;
     top:200px;
     right: 10px;
@@ -464,23 +463,23 @@
 
 .breaking-news{
   position: absolute;
-  top: 50px;
+  top: 40px;
   background: #ef4444;
   color: white;
-  padding: 12px;
+  padding: 10px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
   font-weight: bold;
 }
 
  .logo img{
-    width: 10rem;
+    width: 15rem;
   }
 
   .nav-links {
     position: absolute;
-    top: 50px;
+    top: 40px;
     left: 0;
     width: 100%;
     background: #111827;
@@ -494,26 +493,20 @@
     display: flex;
   }
 
-  .nav-controls{
-  width:auto;
-  display: flex;
-  margin-right: 10rem;
-  justify-content: space-between;
-  }
-
   .search-box{
   display: flex;
-  width: auto;
+  width: 17rem;
+  margin: 1rem 0;
 }
  
   .search-box input{
-  padding: 2px;
-  width: 18rem;
+  padding: 3px;
+  width: 15rem;
   }
 
   
-.search-box button{
-  padding: 1rem;
+.search-box .searchBtn {
+  padding: 0.5rem;
   border: none;
   background: #3b82f6;
   color: white;
@@ -521,7 +514,7 @@
 }
 
   .hero{
-  min-height: 60vh;
+  min-height: 55vh;
   padding: 20px;
   }
 
@@ -670,13 +663,6 @@
 
   .nav-links.active {
     display: flex;
-  }
-
-  .nav-controls{
-  width:auto;
-  display: flex;
-  margin-right: 10rem;
-  justify-content: space-between;
   }
 
   .search-box{
