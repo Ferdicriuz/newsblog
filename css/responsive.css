@@ -414,10 +414,115 @@
 /* =========================
    MOBILE DEVICES
 ========================= */
-@media(max-width:480px){
+@media(max-width:450px){
 
   html{
     font-size: 55%;
+  }
+
+ .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 10vh;
+  width: 100%;
+  z-index: 1000;
+  background: #111827;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  padding: 10px;
+}
+
+  .navbar {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  #themeToggle{
+
+    position: fixed;
+    top:200px;
+    right: 10px;
+    z-index: 2000;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+
+  }
+
+.breaking-news{
+  position: absolute;
+  top: 50px;
+  background: #ef4444;
+  color: white;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+ .logo img{
+    width: 10rem;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background: #111827;
+    flex-direction: column;
+    display: none;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-controls{
+  width:auto;
+  display: flex;
+  margin-right: 10rem;
+  justify-content: space-between;
+  }
+
+  .search-box{
+  display: flex;
+  width: auto;
+}
+ 
+  .search-box input{
+  padding: 2px;
+  width: 18rem;
+  }
+
+  
+.search-box button{
+  padding: 1rem;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+}
+
+  .hero{
+  min-height: 60vh;
+  padding: 20px;
   }
 
   .navbar{
