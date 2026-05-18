@@ -463,7 +463,7 @@
 
 .breaking-news{
   position: absolute;
-  top: 40px;
+  top: 70px;
   background: #ef4444;
   color: white;
   padding: 10px;
@@ -479,7 +479,7 @@
 
   .nav-links {
     position: absolute;
-    top: 40px;
+    top: 60px;
     left: 0;
     width: 100%;
     background: #111827;
@@ -514,7 +514,7 @@
 }
 
   .hero{
-  min-height: 55vh;
+  min-height: 40vh;
   padding: 20px;
   }
 
