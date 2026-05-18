@@ -1,8 +1,5 @@
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
 
-  /* =========================
-     GET QUERY PARAMETERS
-  ========================= */
   const {
     country = "us",
     category,
@@ -12,18 +9,12 @@ export default async function handler(req, res) {
     endpoint
   } = req.query;
 
-  /* =========================
-     API KEY
-  ========================= */
   const API_KEY =
     process.env.NEWS_API_KEY;
 
-  /* =========================
-     BUILD URL
-  ========================= */
   let url = "";
 
-  /* SEARCH NEWS */
+  /* SEARCH */
   if(endpoint === "everything"){
 
     url =
@@ -31,13 +22,12 @@ export default async function handler(req, res) {
 
   }
 
-  /* CATEGORY / HEADLINES */
+  /* TOP HEADLINES */
   else{
 
     url =
       `https://newsapi.org/v2/top-headlines?country=${country}&page=${page}&pageSize=${pageSize}&apiKey=${API_KEY}`;
 
-    /* ADD CATEGORY */
     if(category){
 
       url += `&category=${category}`;
@@ -48,32 +38,22 @@ export default async function handler(req, res) {
 
   try{
 
-    /* =========================
-       FETCH FROM NEWS API
-    ========================= */
     const response =
       await fetch(url);
 
     const data =
       await response.json();
 
-    /* =========================
-       RETURN DATA
-    ========================= */
     res.status(200).json(data);
 
   }catch(error){
 
-    console.log(
-      "Server Error:",
-      error
-    );
+    console.log(error);
 
     res.status(500).json({
-      status: "error",
-      message: "Failed to fetch news"
+      message: "Server Error"
     });
 
   }
 
-}
+};
