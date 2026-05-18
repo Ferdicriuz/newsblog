@@ -3,7 +3,7 @@
 ========================= */
 
 // Vercel Serverless Function
-const BASE_URL = "https://newsapi.org/v2";
+const BASE_URL = "/api/news";
 
 /* =========================
    HANDLE API RESPONSE
