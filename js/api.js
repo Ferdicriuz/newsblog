@@ -119,7 +119,85 @@ async function fetchCategory(category){
   }
 
 }
+// LOAD TREANDING NEWS
 
+async function loadTrendingNews(){
+
+  if(!trendingContainer) return;
+
+  try{
+
+    const articles =
+      await fetchTrendingNews();
+
+    trendingContainer.innerHTML = "";
+
+    if(!articles.length){
+
+      trendingContainer.innerHTML = `
+        <p>No trending news available</p>
+      `;
+
+      return;
+
+    }
+
+    articles
+      .slice(0, 5)
+      .forEach(article => {
+
+        const item =
+          document.createElement("div");
+
+        item.classList.add(
+          "trending-item"
+        );
+
+        item.innerHTML = `
+          <img
+            src="${article.urlToImage || 'assets/images/fallback.jpg'}"
+            alt="Trending"
+            onerror="this.src='assets/images/fallback.jpg'"
+          >
+
+          <div class="trending-content">
+
+            <h4>
+              ${article.title}
+            </h4>
+
+            <p>
+              ${
+                article.description
+                ? article.description.substring(0, 80) + "..."
+                : "No description available"
+              }
+            </p>
+
+            <a
+              href="${article.url}"
+              target="_blank"
+            >
+              Read More
+            </a>
+
+          </div>
+        `;
+
+        trendingContainer.appendChild(item);
+
+      });
+
+  }catch(error){
+
+    console.log(
+      "Trending News Error:",
+      error
+    );
+
+  }
+
+}
 /* =========================
    SEARCH NEWS
 ========================= */
