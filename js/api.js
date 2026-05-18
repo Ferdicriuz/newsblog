@@ -1,13 +1,7 @@
 // /* =========================
 //    API CONFIG
 // ========================= */
-
-// // Pointing it directly to my new api folder
 // const BASE_URL = "/api/news"; 
-
-// fetch(`${BASE_URL}?country=us`)
-//   .then(res => res.json())
-//   .then(data => console.log(data));
 
 // /* =========================
 //    HANDLE API RESPONSE
@@ -196,50 +190,35 @@
 
 // }
 
-// // /* =========================
-// //    LOAD FALLBACK JSON
-// // ========================= */
-// // async function loadFallbackNews(){
-
-// //   try{
-
-// //     const response =
-// //       await fetch(
-// //         "../data/sample-news.json"
-// //       );
-
-// //     const data =
-// //       await response.json();
-
-// //     return data.articles || [];
-
-// //   }catch(error){
-
-// //     console.log(
-// //       "Fallback Error:",
-// //       error
-// //     );
-
-// //     return [];
-
-// //   }
-
-// // }
-
 // /* =========================
-//    LOAD FALLBACK JSON (Updated)
+//    LOAD FALLBACK JSON
 // ========================= */
 // async function loadFallbackNews(){
-//   try{
-//     const response = await fetch("/data/sample-news.json");
-//     const data = await response.json();
-//     return data.articles || [];
-//   }catch(error){
-//     console.log("Fallback Error:", error);
-//     return [];
-//   }
-// }
 
+//   try{
+
+//     const response =
+//       await fetch(
+//         "../data/sample-news.json"
+//       );
+
+//     const data =
+//       await response.json();
+
+//     return data.articles || [];
+
+//   }catch(error){
+
+//     console.log(
+//       "Fallback Error:",
+//       error
+//     );
+
+//     return [];
+
+//   }
+
+// }
 
 // /* =========================
 //    FETCH SINGLE ARTICLE
@@ -308,11 +287,11 @@
 
 // }
 
+
 /* =========================
    API CONFIG
 ========================= */
 
-// Pointing directly to your Vercel mini-backend function
 const BASE_URL = "/api/news"; 
 
 
@@ -439,7 +418,8 @@ async function fetchTrendingNews(){
 ========================= */
 async function loadFallbackNews(){
 
-  try{
+  try {
+    // Fixed path to absolute root directory
     const response = await fetch("/data/sample-news.json");
     const data = await response.json();
     return data.articles || [];
