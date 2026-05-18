@@ -1,0 +1,226 @@
+/* =========================
+   FADE IN
+========================= */
+@keyframes fadeIn{
+
+  from{
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+/* =========================
+   SLIDE IN LEFT
+========================= */
+@keyframes slideLeft{
+
+  from{
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
+/* =========================
+   SLIDE IN RIGHT
+========================= */
+@keyframes slideRight{
+
+  from{
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
+/* =========================
+   ZOOM IN
+========================= */
+@keyframes zoomIn{
+
+  from{
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to{
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+/* =========================
+   FLOATING EFFECT
+========================= */
+@keyframes float{
+
+  0%{
+    transform: translateY(0);
+  }
+
+  50%{
+    transform: translateY(-10px);
+  }
+
+  100%{
+    transform: translateY(0);
+  }
+
+}
+
+/* =========================
+   SPIN
+========================= */
+@keyframes spin{
+
+  100%{
+    transform: rotate(360deg);
+  }
+
+}
+
+/* =========================
+   PULSE
+========================= */
+@keyframes pulse{
+
+  0%{
+    transform: scale(1);
+  }
+
+  50%{
+    transform: scale(1.05);
+  }
+
+  100%{
+    transform: scale(1);
+  }
+
+}
+
+/* =========================
+   SHIMMER LOADING
+========================= */
+@keyframes shimmer{
+
+  0%{
+    background-position: -400px 0;
+  }
+
+  100%{
+    background-position: 400px 0;
+  }
+
+}
+
+/* =========================
+   NEWS CARD ANIMATION
+========================= */
+.news-card{
+  animation: fadeIn 0.5s ease;
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+.hero-content{
+  animation: zoomIn 1s ease;
+}
+
+/* =========================
+   TRENDING SIDEBAR
+========================= */
+.sidebar{
+  animation: slideRight 0.8s ease;
+}
+
+/* =========================
+   ARTICLE CONTAINER
+========================= */
+.article-container{
+  animation: fadeIn 0.8s ease;
+}
+
+/* =========================
+   BUTTON HOVER
+========================= */
+.actions button{
+  transition: 0.3s ease;
+}
+
+.actions button:hover{
+  transform: translateY(-3px);
+}
+
+/* =========================
+   NEWS CARD HOVER
+========================= */
+.news-card{
+  transition: 0.4s ease;
+}
+
+.news-card:hover{
+  transform: translateY(-10px);
+}
+
+/* =========================
+   BACK TO TOP
+========================= */
+#backToTop{
+  animation: pulse 2s infinite;
+}
+
+/* =========================
+   BREAKING NEWS
+========================= */
+.breaking-news{
+  animation: slideLeft 1s ease;
+}
+
+/* =========================
+   LOADER
+========================= */
+.loader{
+  animation: spin 1s linear infinite;
+}
+
+/* =========================
+   SKELETON
+========================= */
+.skeleton{
+
+  background: linear-gradient(
+    90deg,
+    #eeeeee 25%,
+    #dddddd 50%,
+    #eeeeee 75%
+  );
+
+  background-size: 400px 100%;
+
+  animation: shimmer 1.5s infinite;
+}
+
+/* =========================
+   FLOATING IMAGE
+========================= */
+.hero img{
+  animation: float 4s ease-in-out infinite;
+}

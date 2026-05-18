@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>About | StreamLine Daily</title>
+
+  <!-- Favicon -->
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="../favicon.ico"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+</head>
+
+<body>
+
+  <!-- PROGRESS BAR -->
+  <div id="progressBar"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+
+    <!-- LOGO -->
+    <div class="logo">
+
+      <a href="../index.html">
+
+        <img
+          src="../assets/images/logo.png"
+          alt="StreamLine Daily Logo"
+        />
+
+      </a>
+
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav>
+
+      <ul class="nav-links">
+
+        <li>
+          <a href="../index.html">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#"
+            data-category="technology"
+            onclick="loadCategory('technology')"
+          >
+            Technology
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#"
+            data-category="sports"
+            onclick="loadCategory('sports')"
+          >
+            Sports
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#"
+            data-category="business"
+            onclick="loadCategory('business')"
+          >
+            Business
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#"
+            data-category="entertainment"
+            onclick="loadCategory('entertainment')"
+          >
+            Entertainment
+          </a>
+        </li>
+
+        <li>
+          <a href="bookmarks.html">
+            Bookmarks
+          </a>
+        </li>
+
+       <li>
+          <a class="active" href="article.html">
+            Article
+          </a>
+        </li>
+
+        <li>
+          <a href="history.html">
+            History
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+    <!-- SEARCH -->
+    <div class="search-box">
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search news..."
+      />
+
+      <button id="searchBtn">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+      </button>
+
+    </div>
+
+    <!-- RIGHT CONTROLS -->
+    <div class="nav-controls">
+
+      <!-- THEME -->
+      <button id="themeToggle">
+
+        <i class="fa-solid fa-moon"></i>
+
+      </button>
+
+      <!-- MENU -->
+      <div class="menu-toggle" id="menuToggle">
+
+        <i class="fa-solid fa-bars"></i>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+  <section class="hero small-hero">
+
+    <div class="hero-content">
+
+      <h1>About StreamLine Daily</h1>
+
+      <p>
+        Your trusted source for global breaking news,
+        trending stories, sports updates, technology,
+        entertainment, and business headlines.
+      </p>
+
+      <div class="live-time" id="liveTime"></div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <main class="about-page">
+
+    <section class="about-container">
+
+      <div class="about-card">
+
+        <i class="fa-solid fa-newspaper"></i>
+
+        <h2>Who We Are</h2>
+
+        <p>
+          StreamLine Daily is a modern digital news
+          platform designed to keep readers informed
+          with fast, reliable, and engaging stories
+          from around the world.
+        </p>
+
+      </div>
+
+      <div class="about-card">
+
+        <i class="fa-solid fa-globe"></i>
+
+        <h2>Global Coverage</h2>
+
+        <p>
+          We provide international news coverage
+          including politics, technology, sports,
+          entertainment, finance, and breaking
+          headlines updated in real time.
+        </p>
+
+      </div>
+
+      <div class="about-card">
+
+        <i class="fa-solid fa-bolt"></i>
+
+        <h2>Fast Updates</h2>
+
+        <p>
+          Our platform is built for speed and
+          accessibility so users can quickly access
+          the latest information anytime and anywhere.
+        </p>
+
+      </div>
+
+      <div class="about-card">
+
+        <i class="fa-solid fa-mobile-screen"></i>
+
+        <h2>Responsive Experience</h2>
+
+        <p>
+          StreamLine Daily works seamlessly across
+          desktops, tablets, and mobile devices with
+          a smooth and modern reading experience.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- MISSION -->
+    <section class="mission-section">
+
+      <h2>Our Mission</h2>
+
+      <p>
+        Our mission is to deliver reliable and
+        engaging news experiences while keeping
+        readers connected to the stories that matter
+        most across the globe.
+      </p>
+
+    </section>
+
+  </main>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop">
+
+    ↑
+
+  </button>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <p>
+      © 2026 StreamLine Daily.
+      All rights reserved.
+    </p>
+
+  </footer>
+
+  <!-- JS -->
+  <script src="../js/storage.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/app.js"></script>
+
+</body>
+
+</html>

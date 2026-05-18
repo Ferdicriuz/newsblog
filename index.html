@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta
+    name="viewport"content="width=device-width, initial-scale=1.0"/>
+  <title>StreamLine Daily</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <link rel="stylesheet" href="css/animations.css" />
+
+  <!-- Font Awesome -->
+ <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+
+<body>
+
+<!-- Progress Bar -->
+<div id="progressBar"></div>
+
+<!-- =========================
+NAVBAR
+========================== -->
+<header class="navbar">
+
+<!-- Logo -->
+<div class="logo">
+<img src="assets/images/logo.png" alt="StreamLine Daily Logo" />
+</div>
+
+<!-- Navigation -->
+<nav>
+
+<ul class="nav-links">
+<li>
+<a href="index.html">Home</a>
+</li>
+
+<li>
+  <a href="#"data-category="technology" onclick="loadCategory('technology')">
+Technology
+</a>
+</li>
+
+<li>
+<a
+href="#"
+data-category="sports"
+onclick="loadCategory('sports')"
+>
+Sports
+</a>
+</li>
+
+<li>
+<a
+href="#"
+data-category="business"
+onclick="loadCategory('business')"
+>
+Business
+</a>
+</li>
+
+<li>
+<a
+href="#"
+data-category="entertainment"
+onclick="loadCategory('entertainment')"
+>
+Entertainment
+</a>
+</li>
+
+<li>
+<a href="pages/bookmarks.html">
+Bookmarks
+</a>
+</li>
+
+<li>
+<a href="pages/category.html">
+Categories
+</a>
+</li>
+
+<li>
+          <a href="pages/article.html">
+            Article
+          </a>
+        </li>
+
+<li>
+<a href="pages/about.html">
+About
+</a>
+</li>
+
+<li>
+<a href="pages/history.html">
+History
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+<!-- Search -->
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search news..."
+/>
+
+<button id="searchBtn">
+<i class="fa-solid fa-magnifying-glass"></i>
+</button>
+
+</div>
+
+  <!-- Right Controls -->
+  <div class="nav-controls">
+
+    <!-- Dark Mode -->
+    <button id="themeToggle">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <!-- Burger Menu -->
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+  </div>
+
+</header>
+
+<!-- =========================
+      BREAKING NEWS
+========================== -->
+<section class="breaking-news">
+
+  <span>Breaking:</span>
+
+  <marquee id="breakingNews">
+
+    Loading breaking news...
+
+  </marquee>
+
+</section>
+
+<!-- =========================
+      HERO SECTION
+========================== -->
+<section class="hero">
+
+  <div class="hero-content">
+
+    <h1>
+      Latest Global News
+    </h1>
+
+    <p>
+      Stay updated with trending headlines
+      around the world.
+    </p>
+
+    <!-- Live Time -->
+    <div
+      class="live-time"
+      id="liveTime"
+    ></div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+      NEWS LAYOUT
+========================== -->
+<section class="news-layout">
+
+  <!-- Main News -->
+  <div
+    class="news-container"
+    id="newsContainer"
+  ></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <h2>
+      Trending News
+    </h2>
+
+    <div id="trendingContainer"></div>
+
+  </aside>
+
+</section>
+
+<!-- =========================
+      NEWSLETTER
+========================== -->
+<section class="newsletter">
+
+  <h2>
+    Subscribe to our Newsletter
+  </h2>
+
+  <p>
+    Get daily trending news updates.
+  </p>
+
+  <div class="newsletter-box">
+
+    <input
+      type="email"
+      id="newsletterInput"
+      placeholder="Enter your email"
+    />
+
+    <button id="subscribeBtn">
+
+      Subscribe
+
+    </button>
+
+  </div>
+
+</section>
+
+<!-- Toast -->
+<div
+  class="toast"
+  id="toast"
+></div>
+
+<!-- Back To Top -->
+<button id="backToTop">
+
+  ↑
+
+</button>
+
+<!-- =========================
+      FOOTER
+========================== -->
+<footer class="footer">
+
+<p>© 2026 StreamLine Daily. All rights reserved.
+</p>
+
+</footer>
+
+<!-- =========================
+      JAVASCRIPT
+========================== -->
+<script src="js/storage.js"></script>
+
+<script src="js/utils.js"></script>
+
+<script src="js/ui.js"></script>
+
+<script src="js/api.js"></script>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

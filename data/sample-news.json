@@ -1,0 +1,33 @@
+{
+  "articles": [
+    {
+      "title": "AI is Transforming Modern Technology",
+      "description": "Artificial Intelligence continues to shape industries worldwide.",
+      "content": "Full article content goes here...",
+      "url": "https://example.com/ai-news",
+      "urlToImage": "../assets/images/news1.jpg",
+      "author": "John Doe",
+      "publishedAt": "2026-05-15T10:00:00Z"
+    },
+
+    {
+      "title": "Global Markets See Major Growth",
+      "description": "Stock markets around the world experienced major gains today.",
+      "content": "Full market article content...",
+      "url": "https://example.com/market-news",
+      "urlToImage": "../assets/images/news2.jpg",
+      "author": "Sarah Smith",
+      "publishedAt": "2026-05-14T14:30:00Z"
+    },
+
+    {
+      "title": "New Smartphone Released in 2026",
+      "description": "Tech companies continue to innovate smartphone technology.",
+      "content": "Detailed smartphone article...",
+      "url": "https://example.com/smartphone-news",
+      "urlToImage": "../assets/images/news3.jpg",
+      "author": "Michael Brown",
+      "publishedAt": "2026-05-13T09:15:00Z"
+    }
+  ]
+}

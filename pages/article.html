@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Article | StreamLine Daily</title>
+
+  <!-- Favicon -->
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="../favicon.ico"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+</head>
+
+<body>
+
+  <!-- PROGRESS BAR -->
+  <div id="progressBar"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+
+    <!-- LOGO -->
+    <div class="logo">
+
+      <a href="../index.html">
+
+        <img
+          src="../assets/images/logo.png"
+          alt="StreamLine Daily Logo"
+        />
+
+      </a>
+
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav>
+
+      <ul class="nav-links">
+
+        <li>
+          <a href="../index.html">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#"
+            onclick="loadCategory('technology')"
+          >
+            Technology
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#"
+            onclick="loadCategory('sports')"
+          >
+            Sports
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#"
+            onclick="loadCategory('business')"
+          >
+            Business
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="#"
+            onclick="loadCategory('entertainment')"
+          >
+            Entertainment
+          </a>
+        </li>
+
+        <li>
+          <a href="bookmarks.html">
+            Bookmarks
+          </a>
+        </li>
+
+        <li>
+          <a href="category.html">
+            Categories
+          </a>
+        </li>
+
+        
+
+        <li>
+          <a href="about.html">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="history.html">
+            History
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+    <!-- SEARCH -->
+    <div class="search-box">
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search news..."
+      />
+
+      <button id="searchBtn">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+      </button>
+
+    </div>
+
+    <!-- CONTROLS -->
+    <div class="nav-controls">
+
+      <!-- THEME -->
+      <button id="themeToggle">
+
+        <i class="fa-solid fa-moon"></i>
+
+      </button>
+
+      <!-- MOBILE MENU -->
+      <div class="menu-toggle" id="menuToggle">
+
+        <i class="fa-solid fa-bars"></i>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+  <section class="hero small-hero">
+
+    <div class="hero-content">
+
+      <h1>Latest News Article</h1>
+
+      <p>
+        Read full breaking stories from around the world.
+      </p>
+
+      <div class="live-time" id="liveTime"></div>
+
+    </div>
+
+  </section>
+
+  <!-- ARTICLE LAYOUT -->
+  <main class="article-layout">
+
+    <!-- ARTICLE -->
+    <article class="article-container">
+
+      <!-- IMAGE -->
+      <img
+        id="articleImage"
+        alt="News Image"
+      />
+
+      <!-- META -->
+      <div class="article-meta">
+
+        <span>
+
+          <i class="fa-solid fa-user"></i>
+
+          <span id="articleAuthor"></span>
+
+        </span>
+
+        <span>
+
+          <i class="fa-solid fa-calendar"></i>
+
+          <span id="articleDate"></span>
+
+        </span>
+
+      </div>
+
+      <!-- TITLE -->
+      <h1 id="articleTitle"></h1>
+
+      <!-- DESCRIPTION -->
+      <p id="articleDescription"></p>
+
+      <!-- ACTION BUTTONS -->
+      <div class="article-actions">
+
+        <a
+          id="articleLink"
+          target="_blank"
+          class="read-btn"
+        >
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+          Read Full Article
+
+        </a>
+
+        <button
+          class="bookmark-btn"
+          id="saveArticleBtn"
+        >
+
+          <i class="fa-solid fa-bookmark"></i>
+
+          Save
+
+        </button>
+
+        <button
+          class="share-btn"
+          id="shareArticleBtn"
+        >
+
+          <i class="fa-solid fa-share-nodes"></i>
+
+          Share
+
+        </button>
+
+      </div>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="article-sidebar">
+
+      <h2>
+
+        <i class="fa-solid fa-fire"></i>
+
+        Related News
+
+      </h2>
+
+      <div id="relatedNews"></div>
+
+    </aside>
+
+  </main>
+
+  <!-- BACK BUTTON -->
+  <div class="article-back">
+
+    <a
+      href="../index.html"
+      class="read-btn"
+    >
+
+      <i class="fa-solid fa-arrow-left"></i>
+
+      Back to Home
+
+    </a>
+
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop">
+
+    ↑
+
+  </button>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <p>
+      © 2026 StreamLine Daily.
+      All rights reserved.
+    </p>
+
+  </footer>
+
+  <!-- JS -->
+  <script src="../js/storage.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/article.js"></script>
+
+</body>
+
+</html>
