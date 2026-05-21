@@ -771,14 +771,9 @@
 
   /* SEARCH */
   .search-box{
-    display: flex;
-    align-items: center;
-
-    width: 180px;
-
-    margin-left: auto;
-    margin-right: 15px;
-  }
+  width: 180px;
+  height: 38px;
+}
 
   .search-box input{
     width: 100%;
@@ -800,7 +795,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-size: 3rem;
     color: white;
     cursor: pointer;
@@ -809,24 +803,16 @@
   /* MOBILE NAV */
   .nav-links{
     position: fixed;
-
     top: 80px;
     left: -100%;
-
     width: 100%;
     height: calc(100vh - 80px);
-
     background: #111827;
-
     display: flex;
     flex-direction: column;
-
     gap: 20px;
-
-    padding: 40px 25px;
-
+    padding: 30px 25px;
     transition: 0.4s ease;
-
     z-index: 999;
   }
 
@@ -842,8 +828,7 @@
   /* FLOATING THEME BUTTON */
   #themeToggle{
     position: fixed;
-
-    top: 100px;
+    top: 300px;
     right: 15px;
 
     width: 45px;
@@ -865,17 +850,19 @@
 
   /* BREAKING NEWS */
   .breaking-news{
-    margin-top: 80px;
+  margin-top: 80px;
 
-    padding: 12px 15px;
+  padding: 10px 15px;
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    gap: 10px;
+  gap: 10px;
 
-    font-size: 1.4rem;
-  }
+  overflow: hidden;
+
+  white-space: nowrap;
+}
 
   /* HERO */
   .hero{
@@ -1036,11 +1023,10 @@
     width: 12rem;
   }
 
-  .search-box{
-    width: 140px;
-    margin-right: 10px;
-  }
-
+ .search-box{
+  width: 140px;
+  height: 36px;
+}
   .search-box input{
     padding: 8px;
     font-size: 1.2rem;
@@ -1060,10 +1046,12 @@
   }
 
   .breaking-news{
-    margin-top: 75px;
-    padding: 10px;
-    font-size: 1.2rem;
-  }
+  margin-top: 75px;
+  padding: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1.2rem;
+}
 
   .hero{
     min-height: 55vh;
@@ -1148,8 +1136,9 @@
   }
 
   .search-box{
-    width: 120px;
-  }
+  width: 120px;
+  height: 34px;
+}
 
   .search-box input{
     width: 100%;
@@ -1169,11 +1158,13 @@
     height: calc(100vh - 70px);
   }
 
-  .breaking-news{
-    margin-top: 70px;
-    font-size: 1.1rem;
-  }
-
+ .breaking-news{
+  margin-top: 70px;
+  padding: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1.1rem;
+}
   .hero{
     min-height: 50vh;
   }
