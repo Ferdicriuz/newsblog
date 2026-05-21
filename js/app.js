@@ -388,6 +388,7 @@ const handleSearch =
 
     window.location.href =
   `pages/search.html?q=${query}`;
+  
     hideLoader();
 
     newsContainer.innerHTML = "";
