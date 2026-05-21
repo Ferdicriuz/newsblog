@@ -2,12 +2,13 @@
    API CONFIG
 ========================= */
 
-// Vercel Serverless Function
 const BASE_URL = "/api/news";
 
+
 /* =========================
-   HANDLE API RESPONSE
+   HANDLE RESPONSE
 ========================= */
+
 async function handleResponse(response){
 
   if(!response.ok){
@@ -22,34 +23,22 @@ async function handleResponse(response){
 
 }
 
+
 /* =========================
-   FETCH TOP HEADLINES
+   FETCH NEWS
 ========================= */
+
 async function fetchNews(page = 1){
 
   try{
 
-    startLoading();
-
-    // Nigeria first page
-    let url =
-      `${BASE_URL}?country=ng&page=${page}`;
-
-    // Other pages global US news
-    if(page > 1){
-
-      url =
-        `${BASE_URL}?country=us&page=${page}`;
-
-    }
-
     const response =
-      await fetch(url);
+      await fetch(
+        `${BASE_URL}?country=us&page=${page}`
+      );
 
     const data =
       await handleResponse(response);
-
-    finishLoading();
 
     return data.articles || [];
 
@@ -60,218 +49,17 @@ async function fetchNews(page = 1){
       error
     );
 
-    finishLoading();
-
-    return await loadFallbackNews();
-
-  }
-
-}
-
-/* =========================
-   FETCH CATEGORY NEWS
-========================= */
-async function fetchCategory(category){
-
-  try{
-
-    startLoading();
-
-    let url = "";
-
-    /* SPORTS => USA */
-    if(category === "sports"){
-
-      url =
-        `${BASE_URL}?country=us&category=sports`;
-
-    }
-
-    /* OTHER CATEGORIES => NIGERIA */
-    else{
-
-      url =
-        `${BASE_URL}?country=ng&category=${category}`;
-
-    }
-
-    const response =
-      await fetch(url);
-
-    const data =
-      await handleResponse(response);
-
-    finishLoading();
-
-    return data.articles || [];
-
-  }catch(error){
-
-    console.log(
-      "Category Error:",
-      error
-    );
-
-    finishLoading();
-
     return [];
 
   }
 
 }
 
-/* =========================
-   TRENDING NEWS
-========================= */
-
-async function loadTrendingNews(){
-
-  if(!trendingContainer) return;
-
-  try{
-
-    const articles =
-      await fetchTrendingNews();
-
-    trendingContainer.innerHTML = "";
-
-    if(!articles.length){
-
-      trendingContainer.innerHTML = `
-        <p class="empty-text">
-          No trending news available
-        </p>
-      `;
-
-      return;
-
-    }
-
-    articles
-      .slice(0, 5)
-      .forEach(article => {
-
-        const item =
-          document.createElement("div");
-
-        item.classList.add(
-          "trending-item"
-        );
-
-        item.innerHTML = `
-          <h4>
-            ${article.title}
-          </h4>
-
-          <a
-            href="${article.url}"
-            target="_blank"
-          >
-            Read More
-          </a>
-        `;
-
-        trendingContainer
-          .appendChild(item);
-
-      });
-
-  }catch(error){
-
-    console.log(
-      "Trending Error:",
-      error
-    );
-
-  }
-
-}
-
-
 
 /* =========================
-   SEARCH NEWS
-========================= */
-async function searchNews(query){
-
-  try{
-
-    startLoading();
-
-    const response =
-      await fetch(
-        `${BASE_URL}?endpoint=everything&q=${query}`
-      );
-
-    const data =
-      await handleResponse(response);
-
-    finishLoading();
-
-    return data.articles || [];
-
-  }catch(error){
-
-    console.log(
-      "Search Error:",
-      error
-    );
-
-    finishLoading();
-
-    return [];
-
-  }
-
-}
-
-/* =========================
-   BREAKING NEWS
+   FETCH TRENDING
 ========================= */
 
-async function loadBreakingNews(){
-
-  if(!breakingNews) return;
-
-  try{
-
-    const articles =
-      await fetchBreakingNews();
-
-    if(!articles.length){
-
-      breakingNews.innerHTML =
-        "No breaking news available";
-
-      return;
-
-    }
-
-    const headlines =
-      articles
-        .slice(0, 10)
-        .map(article => article.title)
-        .join(" 🔥 ");
-
-    breakingNews.innerHTML =
-      headlines;
-
-  }catch(error){
-
-    console.log(
-      "Breaking News Error:",
-      error
-    );
-
-    breakingNews.innerHTML =
-      "Unable to load breaking news";
-
-  }
-
-}
-/* =========================
-   FETCH TRENDING NEWS
-========================= */
 async function fetchTrendingNews(){
 
   try{
@@ -289,7 +77,7 @@ async function fetchTrendingNews(){
   }catch(error){
 
     console.log(
-      "Trending News Error:",
+      "Trending Error:",
       error
     );
 
@@ -299,27 +87,29 @@ async function fetchTrendingNews(){
 
 }
 
+
 /* =========================
-   LOAD FALLBACK NEWS
+   FETCH BREAKING
 ========================= */
-async function loadFallbackNews(){
+
+async function fetchBreakingNews(){
 
   try{
 
     const response =
       await fetch(
-        "/data/sample-news.json"
+        `${BASE_URL}?country=us&pageSize=10`
       );
 
     const data =
-      await response.json();
+      await handleResponse(response);
 
     return data.articles || [];
 
   }catch(error){
 
     console.log(
-      "Fallback Error:",
+      "Breaking Error:",
       error
     );
 
@@ -329,68 +119,65 @@ async function loadFallbackNews(){
 
 }
 
+
 /* =========================
-   FETCH SINGLE ARTICLE
+   CATEGORY NEWS
 ========================= */
-async function fetchSingleArticle(title){
+
+async function fetchCategory(category){
 
   try{
 
-    const articles =
-      await fetchNews();
+    const response =
+      await fetch(
+        `${BASE_URL}?country=us&category=${category}`
+      );
 
-    return articles.find(
-      article =>
-        article.title === title
-    );
+    const data =
+      await handleResponse(response);
+
+    return data.articles || [];
 
   }catch(error){
 
     console.log(
-      "Single Article Error:",
+      "Category Error:",
       error
     );
 
-    return null;
+    return [];
 
   }
 
 }
 
+
 /* =========================
-   CATEGORY SELECTOR
+   SEARCH NEWS
 ========================= */
-async function selectCategory(category){
 
-  saveCategory(category);
+async function searchNews(query){
 
-  const articles =
-    await fetchCategory(category);
+  try{
 
-  if(newsContainer){
-
-    newsContainer.innerHTML = "";
-
-    if(!articles.length){
-
-      showEmptyState(
-        newsContainer,
-        "No News Found",
-        "Try another category"
+    const response =
+      await fetch(
+        `${BASE_URL}?endpoint=everything&q=${query}`
       );
 
-      return;
+    const data =
+      await handleResponse(response);
 
-    }
+    return data.articles || [];
 
-    articles.forEach(article => {
+  }catch(error){
 
-      const card =
-        createNewsCard(article);
+    console.log(
+      "Search Error:",
+      error
+    );
 
-      newsContainer.appendChild(card);
-
-    });
+    return [];
 
   }
 

@@ -1,32 +1,27 @@
-module.exports = async function handler(req, res) {
-
-  const {
-    country = "us",
-    category,
-    page = 1,
-    pageSize = 12,
-    q,
-    endpoint
-  } = req.query;
+export default async function handler(req, res){
 
   const API_KEY =
     process.env.NEWS_API_KEY;
 
-  let url = "";
+  const {
+    country = "us",
+    category,
+    q,
+    page = 1,
+    pageSize = 20,
+    endpoint = "top-headlines"
+  } = req.query;
 
-  /* SEARCH */
+  let url =
+    `https://newsapi.org/v2/${endpoint}?apiKey=${API_KEY}`;
+
   if(endpoint === "everything"){
 
-    url =
-      `https://newsapi.org/v2/everything?q=${q}&pageSize=${pageSize}&sortBy=publishedAt&language=en&apiKey=${API_KEY}`;
+    url += `&q=${q}`;
 
-  }
+  }else{
 
-  /* TOP HEADLINES */
-  else{
-
-    url =
-      `https://newsapi.org/v2/top-headlines?country=${country}&page=${page}&pageSize=${pageSize}&apiKey=${API_KEY}`;
+    url += `&country=${country}`;
 
     if(category){
 
@@ -35,6 +30,8 @@ module.exports = async function handler(req, res) {
     }
 
   }
+
+  url += `&page=${page}&pageSize=${pageSize}`;
 
   try{
 
@@ -48,12 +45,10 @@ module.exports = async function handler(req, res) {
 
   }catch(error){
 
-    console.log(error);
-
     res.status(500).json({
-      message: "Server Error"
+      error: "Failed to fetch news"
     });
 
   }
 
-};
+}
