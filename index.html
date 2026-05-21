@@ -30,103 +30,117 @@ NAVBAR
 ========================== -->
 <header class="navbar">
 
-<!-- Logo -->
-<div class="logo">
-<img src="assets/images/logo.png" alt="StreamLine Daily Logo" />
-</div>
+  <!-- Logo -->
+  <div class="logo">
+    <img
+      src="assets/images/logo.png"
+      alt="StreamLine Daily Logo"
+    />
+  </div>
 
-<!-- Navigation -->
-<nav>
+  <!-- Navigation -->
+  <nav>
 
-<ul class="nav-links">
-<li>
-<a href="index.html">Home</a>
-</li>
+    <ul class="nav-links">
 
-<li>
-  <a href="#"data-category="technology" onclick="loadCategory('technology')">
-Technology
-</a>
-</li>
+      <!-- MOBILE SEARCH -->
+      <li class="mobile-search">
 
-<li>
-<a
-href="#"
-data-category="sports"
-onclick="loadCategory('sports')"
->
-Sports
-</a>
-</li>
+        <div class="search-box">
 
-<li>
-<a
-href="#"
-data-category="business"
-onclick="loadCategory('business')"
->
-Business
-</a>
-</li>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search news..."
+          />
 
-<li>
-<a
-href="#"
-data-category="entertainment"
-onclick="loadCategory('entertainment')"
->
-Entertainment
-</a>
-</li>
+          <button id="searchBtn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
 
-<li>
-<a href="pages/bookmarks.html">
-Bookmarks
-</a>
-</li>
+        </div>
 
-<li>
-<a href="pages/category.html">
-Categories
-</a>
-</li>
+      </li>
 
-<li>
-          <a href="pages/article.html">
-            Article
-          </a>
-        </li>
+      <li>
+        <a href="index.html">
+          Home
+        </a>
+      </li>
 
-<li>
-<a href="pages/about.html">
-About
-</a>
-</li>
+      <li>
+        <a
+          href="#"
+          data-category="technology"
+          onclick="loadCategory('technology')"
+        >
+          Technology
+        </a>
+      </li>
 
-<li>
-<a href="pages/history.html">
-History
-</a>
-</li>
+      <li>
+        <a
+          href="#"
+          data-category="sports"
+          onclick="loadCategory('sports')"
+        >
+          Sports
+        </a>
+      </li>
 
-</ul>
+      <li>
+        <a
+          href="#"
+          data-category="business"
+          onclick="loadCategory('business')"
+        >
+          Business
+        </a>
+      </li>
 
-</nav>
+      <li>
+        <a
+          href="#"
+          data-category="entertainment"
+          onclick="loadCategory('entertainment')"
+        >
+          Entertainment
+        </a>
+      </li>
 
-<!-- Search -->
-<div class="search-box">
+      <li>
+        <a href="pages/bookmarks.html">
+          Bookmarks
+        </a>
+      </li>
 
-<input
-type="text"
-id="searchInput"
-placeholder="Search news..."
-/>
+      <li>
+        <a href="pages/category.html">
+          Categories
+        </a>
+      </li>
 
-<button id="searchBtn">
-<i class="fa-solid fa-magnifying-glass"></i>
-</button>
+      <li>
+        <a href="pages/article.html">
+          Article
+        </a>
+      </li>
 
-</div>
+      <li>
+        <a href="pages/about.html">
+          About
+        </a>
+      </li>
+
+      <li>
+        <a href="pages/history.html">
+          History
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
 
   <!-- Right Controls -->
   <div class="nav-controls">
