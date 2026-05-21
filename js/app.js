@@ -386,9 +386,8 @@ const handleSearch =
 
     showLoader();
 
-    const articles =
-      await searchNews(query);
-
+    window.location.href =
+  `pages/search.html?q=${query}`;
     hideLoader();
 
     newsContainer.innerHTML = "";
