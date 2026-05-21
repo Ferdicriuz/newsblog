@@ -37,133 +37,151 @@
   <!-- PROGRESS BAR -->
   <div id="progressBar"></div>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
+  <!-- =========================
+NAVBAR
+========================== -->
+<header class="navbar">
 
-    <!-- LOGO -->
-    <div class="logo">
+  <!-- Logo -->
+  <div class="logo">
+    <img
+      src="assets/images/logo.png"
+      alt="StreamLine Daily Logo"
+    />
+  </div>
 
-      <a href="../index.html">
+  <!-- Navigation -->
+  <nav>
 
-        <img
-          src="../assets/images/logo.png"
-          alt="StreamLine Daily Logo"
-        />
+    <ul class="nav-links">
 
-      </a>
+      <!-- MOBILE SEARCH -->
+      <li class="mobile-search" id="moby">
 
-    </div>
+        <div class="search-box" id="moby">
 
-    <!-- NAVIGATION -->
-    <nav>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search news..."
+          />
 
-      <ul class="nav-links">
+          <button id="searchBtn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
 
-        <li>
-          <a href="../index.html">
-            Home
-          </a>
-        </li>
+        </div>
 
-        <li>
-          <a
-            href="#"
-            data-category="technology"
-            onclick="loadCategory('technology')"
-          >
-            Technology
-          </a>
-        </li>
+      </li>
 
-        <li>
-          <a
-            href="#"
-            data-category="sports"
-            onclick="loadCategory('sports')"
-          >
-            Sports
-          </a>
-        </li>
+      <li>
+        <a href="index.html">
+          Home
+        </a>
+      </li>
 
-        <li>
-          <a
-            href="#"
-            data-category="business"
-            onclick="loadCategory('business')"
-          >
-            Business
-          </a>
-        </li>
+      <li>
+        <a
+          href="#"
+          data-category="technology"
+          onclick="loadCategory('technology')"
+        >
+          Technology
+        </a>
+      </li>
 
-        <li>
-          <a
-            href="#"
-            data-category="entertainment"
-            onclick="loadCategory('entertainment')"
-          >
-            Entertainment
-          </a>
-        </li>
+      <li>
+        <a
+          href="#"
+          data-category="sports"
+          onclick="loadCategory('sports')"
+        >
+          Sports
+        </a>
+      </li>
 
-        <li>
-          <a href="bookmarks.html">
-            Bookmarks
-          </a>
-        </li>
+      <li>
+        <a
+          href="#"
+          data-category="business"
+          onclick="loadCategory('business')"
+        >
+          Business
+        </a>
+      </li>
 
-       <li>
-          <a class="active" href="article.html">
-            Article
-          </a>
-        </li>
+      <li>
+        <a
+          href="#"
+          data-category="entertainment"
+          onclick="loadCategory('entertainment')"
+        >
+          Entertainment
+        </a>
+      </li>
 
-        <li>
-          <a href="history.html">
-            History
-          </a>
-        </li>
+      <li>
+        <a href="pages/bookmarks.html">
+          Bookmarks
+        </a>
+      </li>
 
-      </ul>
+      <li>
+        <a href="pages/category.html">
+          Categories
+        </a>
+      </li>
 
-    </nav>
+      <li>
+        <a href="pages/article.html">
+          Article
+        </a>
+      </li>
 
-    <!-- SEARCH -->
-    <div class="search-box">
+      <li>
+        <a href="pages/history.html">
+          History
+        </a>
+      </li>
 
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="Search news..."
-      />
+    </ul>
 
-      <button id="searchBtn">
+  </nav>
 
-        <i class="fa-solid fa-magnifying-glass"></i>
+   <!-- MOBILE SEARCH -->
+      <div class="mobile-search" id="desktup">
 
-      </button>
+        <div class="search-box" id="desktup">
 
-    </div>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search news..."
+          />
 
-    <!-- RIGHT CONTROLS -->
-    <div class="nav-controls">
+          <button id="searchBtn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
 
-      <!-- THEME -->
-      <button id="themeToggle">
-
-        <i class="fa-solid fa-moon"></i>
-
-      </button>
-
-      <!-- MENU -->
-      <div class="menu-toggle" id="menuToggle">
-
-        <i class="fa-solid fa-bars"></i>
+        </div>
 
       </div>
+  <!-- Right Controls -->
+  <div class="nav-controls">
 
+    <!-- Dark Mode -->
+    <button id="themeToggle">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <!-- Burger Menu -->
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fa-solid fa-bars"></i>
     </div>
 
-  </header>
+  </div>
+
+</header>
 
   <!-- HERO -->
   <section class="hero small-hero">

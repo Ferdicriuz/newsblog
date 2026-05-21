@@ -139,6 +139,7 @@ html{
   justify-content: space-between;
   list-style: none;
   width: 60rem;
+  font-size: 1rem;
   gap: 20px;
 }
 
@@ -152,22 +153,54 @@ html{
   color: #3b82f6;
 }
 
+#moby{
+display: none;
+}
+
 .search-box{
   display: flex;
+  align-items: center;
+
+  height: 42px;
+
+  background: white;
+
+  border-radius: 8px;
+
+  overflow: hidden;
 }
 
 .search-box input{
-  padding: 10px;
+  height: 100%;
+
   border: none;
   outline: none;
+
+  padding: 0 12px;
+
+  font-size: 1.4rem;
+
+  width: 100%;
 }
 
 .search-box button{
-  padding: 10px 15px;
+  height: 100%;
+
+  width: 45px;
+
   border: none;
+
   background: #3b82f6;
+
   color: white;
+
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.4rem;
 }
 
 /* Hero */
@@ -559,14 +592,23 @@ html{
 
 /* DESCRIPTION */
 .article-container p{
-  font-size: 1.7rem;
+  line-height: 2.1;
 
-  line-height: 2;
+  font-size: 1.7rem;
 
   color: #444;
 
-  margin-bottom: 35px;
+  margin-top: 25px;
+
+  margin-bottom: 30px;
+
+  text-align: justify;
+
+  max-width: 100%;
 }
+
+
+
 
 /* ACTIONS */
 .article-actions{
