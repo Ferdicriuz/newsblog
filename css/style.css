@@ -587,13 +587,19 @@ html{
 
 /* DESCRIPTION */
 .article-container p{
-  font-size: 1.7rem;
+  line-height: 2.1;
 
-  line-height: 2;
+  font-size: 1.7rem;
 
   color: #444;
 
-  margin-bottom: 35px;
+  margin-top: 25px;
+
+  margin-bottom: 30px;
+
+  text-align: justify;
+
+  max-width: 100%;
 }
 
 /* ACTIONS */
