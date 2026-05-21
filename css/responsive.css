@@ -1,6 +1,6 @@
 /* =========================
    LARGE TABLETS
-========================= */
+========================= 
 @media(max-width:1024px){
 
   .news-layout{
@@ -26,7 +26,7 @@
 
 /* =========================
    TABLETS
-========================= */
+========================= 
 @media(max-width:768px){
 
   html{
@@ -169,7 +169,7 @@
 
   /* =========================
    ARTICLE PAGE
-========================= */
+========================= 
 
 .article-layout{
   display: grid;
@@ -181,7 +181,7 @@
   padding: 60px 8%;
 }
 
-/* ARTICLE */
+/* ARTICLE *
 .article-container{
   background: white;
 
@@ -193,7 +193,7 @@
     0 10px 30px rgba(0,0,0,0.08);
 }
 
-/* IMAGE */
+/* IMAGE *
 .article-container img{
   width: 100%;
 
@@ -206,7 +206,7 @@
   margin-bottom: 30px;
 }
 
-/* META */
+/* META *
 .article-meta{
   display: flex;
 
@@ -229,7 +229,7 @@
   gap: 8px;
 }
 
-/* TITLE */
+/* TITLE *
 .article-container h1{
   font-size: 3.5rem;
 
@@ -240,7 +240,7 @@
   color: #111827;
 }
 
-/* DESCRIPTION */
+/* DESCRIPTION *
 .article-container p{
   font-size: 1.7rem;
 
@@ -260,7 +260,7 @@
   flex-wrap: wrap;
 }
 
-/* SIDEBAR */
+/* SIDEBAR *
 .article-sidebar{
   background: white;
 
@@ -286,7 +286,7 @@
   gap: 10px;
 }
 
-/* RELATED */
+/* RELATED *
 .related-item{
   padding-bottom: 20px;
 
@@ -311,12 +311,12 @@
   font-size: 1.4rem;
 }
 
-/* BACK BUTTON */
+/* BACK BUTTON *
 .article-back{
   padding: 0 8% 60px;
 }
 
-/* DARK MODE */
+/* DARK MODE *
 .dark-mode .article-container,
 .dark-mode .article-sidebar{
   background: #1e293b;
@@ -413,7 +413,7 @@
 
 /* =========================
    MOBILE DEVICES
-========================= */
+========================= *
 @media(max-width:450px){
 
   html{
@@ -584,7 +584,7 @@
 
 /* =========================
    EXTRA SMALL DEVICES
-========================= */
+========================= *
 @media(max-width:350px){
 
   html{
@@ -697,5 +697,493 @@
     font-size: 2rem;
   }
 
+
+} */
+
+/* =========================
+   LARGE TABLETS
+========================= */
+@media (max-width: 1024px){
+
+  .news-layout{
+    grid-template-columns: 1fr;
+    padding: 40px 5%;
+  }
+
+  .article-layout{
+    grid-template-columns: 1fr;
+    padding: 50px 5%;
+  }
+
+  .sidebar,
+  .article-sidebar{
+    margin-top: 30px;
+  }
+
+  .navbar{
+    padding: 1.5rem 3rem;
+  }
+
+  .hero{
+    min-height: 70vh;
+  }
+
+}
+
+/* =========================
+   TABLETS
+========================= */
+@media (max-width: 768px){
+
+  html{
+    font-size: 58%;
+  }
+
+  body{
+    overflow-x: hidden;
+  }
+
+  /* NAVBAR */
+  .navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 80px;
+
+    padding: 0 20px;
+
+    background: #111827;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 1000;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  .logo img{
+    width: 14rem;
+  }
+
+  /* SEARCH */
+  .search-box{
+    display: flex;
+    align-items: center;
+
+    width: 180px;
+
+    margin-left: auto;
+    margin-right: 15px;
+  }
+
+  .search-box input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+  }
+
+  .search-box button{
+    padding: 10px 14px;
+    border: none;
+    background: #3b82f6;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* BURGER MENU */
+  .menu-toggle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* MOBILE NAV */
+  .nav-links{
+    position: fixed;
+
+    top: 80px;
+    left: -100%;
+
+    width: 100%;
+    height: calc(100vh - 80px);
+
+    background: #111827;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    padding: 40px 25px;
+
+    transition: 0.4s ease;
+
+    z-index: 999;
+  }
+
+  .nav-links.active{
+    left: 0;
+  }
+
+  .nav-links a{
+    font-size: 1.8rem;
+    color: white;
+  }
+
+  /* FLOATING THEME BUTTON */
+  #themeToggle{
+    position: fixed;
+
+    top: 100px;
+    right: 15px;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+    border: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    z-index: 2000;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+
+  /* BREAKING NEWS */
+  .breaking-news{
+    margin-top: 80px;
+
+    padding: 12px 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 1.4rem;
+  }
+
+  /* HERO */
+  .hero{
+    min-height: 70vh;
+    padding: 30px 20px;
+  }
+
+  .hero-content h1{
+    font-size: 3.5rem;
+  }
+
+  .hero-content p{
+    font-size: 1.6rem;
+  }
+
+  .live-time{
+    margin-top: 20px;
+    font-size: 1.4rem;
+  }
+
+  /* NEWS SECTION */
+  .news-layout{
+    grid-template-columns: 1fr;
+    padding: 30px 5%;
+  }
+
+  .news-container{
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    padding: 20px 0;
+  }
+
+  .news-card img{
+    height: 220px;
+  }
+
+  /* ARTICLE PAGE */
+  .article-layout{
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+
+    padding: 40px 5%;
+  }
+
+  .article-container{
+    padding: 25px;
+    border-radius: 20px;
+  }
+
+  .article-container img{
+    height: 320px;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  .article-container h1{
+    font-size: 2.8rem;
+  }
+
+  .article-container p{
+    font-size: 1.5rem;
+    line-height: 1.9;
+  }
+
+  .article-meta{
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 1.3rem;
+  }
+
+  .article-sidebar{
+    padding: 25px;
+    border-radius: 20px;
+  }
+
+  .article-sidebar h2{
+    font-size: 2rem;
+  }
+
+  .related-item h4{
+    font-size: 1.5rem;
+  }
+
+  /* NEWSLETTER */
+  .newsletter{
+    padding: 50px 5%;
+  }
+
+  .newsletter-box{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .newsletter-box input{
+    width: 100%;
+  }
+
+  /* ABOUT PAGE */
+  .about-page{
+    padding: 40px 5%;
+  }
+
+  .about-card{
+    padding: 30px 20px;
+  }
+
+  .about-card h2{
+    font-size: 2rem;
+  }
+
+  .mission-section{
+    padding: 40px 25px;
+  }
+
+  .mission-section h2{
+    font-size: 2.5rem;
+  }
+
+  .mission-section p{
+    font-size: 1.5rem;
+  }
+
+  /* CATEGORY */
+  .category-page{
+    padding: 40px 5%;
+  }
+
+  .category-card{
+    padding: 35px 20px;
+  }
+
+  .category-card h2{
+    font-size: 2rem;
+  }
+
+  .category-card i{
+    font-size: 4rem;
+  }
+
+}
+
+/* =========================
+   MOBILE DEVICES
+========================= */
+@media (max-width: 450px){
+
+  html{
+    font-size: 55%;
+  }
+
+  .navbar{
+    height: 75px;
+    padding: 0 15px;
+  }
+
+  .logo img{
+    width: 12rem;
+  }
+
+  .search-box{
+    width: 140px;
+    margin-right: 10px;
+  }
+
+  .search-box input{
+    padding: 8px;
+    font-size: 1.2rem;
+  }
+
+  .search-box button{
+    padding: 8px 10px;
+  }
+
+  .menu-toggle{
+    font-size: 2.7rem;
+  }
+
+  .nav-links{
+    top: 75px;
+    height: calc(100vh - 75px);
+  }
+
+  .breaking-news{
+    margin-top: 75px;
+    padding: 10px;
+    font-size: 1.2rem;
+  }
+
+  .hero{
+    min-height: 55vh;
+  }
+
+  .hero-content h1{
+    font-size: 2.8rem;
+  }
+
+  .hero-content p{
+    font-size: 1.4rem;
+  }
+
+  .news-container{
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .news-card img{
+    height: 200px;
+  }
+
+  .news-content{
+    padding: 15px;
+  }
+
+  .actions{
+    flex-direction: column;
+  }
+
+  .actions button{
+    width: 100%;
+  }
+
+  .article-container img{
+    height: 230px;
+  }
+
+  .article-container h1{
+    font-size: 2.2rem;
+  }
+
+  .article-meta{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .newsletter h2{
+    font-size: 2rem;
+  }
+
+  #backToTop{
+    left: 15px;
+    bottom: 20px;
+  }
+
+  .toast{
+    left: 15px;
+    right: 15px;
+    bottom: 20px;
+    text-align: center;
+  }
+
+}
+
+/* =========================
+   EXTRA SMALL DEVICES
+========================= */
+@media (max-width: 350px){
+
+  html{
+    font-size: 50%;
+  }
+
+  .navbar{
+    height: 70px;
+    padding: 0 10px;
+  }
+
+  .logo img{
+    width: 10rem;
+  }
+
+  .search-box{
+    width: 120px;
+  }
+
+  .search-box input{
+    width: 100%;
+    padding: 6px;
+  }
+
+  .search-box button{
+    padding: 7px;
+  }
+
+  .menu-toggle{
+    font-size: 2.4rem;
+  }
+
+  .nav-links{
+    top: 70px;
+    height: calc(100vh - 70px);
+  }
+
+  .breaking-news{
+    margin-top: 70px;
+    font-size: 1.1rem;
+  }
+
+  .hero{
+    min-height: 50vh;
+  }
+
+  .hero-content h1{
+    font-size: 2.3rem;
+  }
+
+  .hero-content p{
+    font-size: 1.3rem;
+  }
 
 }
