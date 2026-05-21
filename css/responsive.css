@@ -207,16 +207,14 @@
 
     display: flex;
     align-items: center;
-
-    gap: 10px;
-
     overflow: hidden;
-
     white-space: nowrap;
   }
 
-  .breaking-news span{
-    flex-shrink: 0;
+  .breaking-news marquee{
+     width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
     font-size: 1.3rem;
   }
 

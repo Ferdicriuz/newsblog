@@ -119,7 +119,10 @@ async function fetchCategory(category){
   }
 
 }
-// LOAD TREANDING NEWS
+
+/* =========================
+   TRENDING NEWS
+========================= */
 
 async function loadTrendingNews(){
 
@@ -135,7 +138,9 @@ async function loadTrendingNews(){
     if(!articles.length){
 
       trendingContainer.innerHTML = `
-        <p>No trending news available</p>
+        <p class="empty-text">
+          No trending news available
+        </p>
       `;
 
       return;
@@ -154,50 +159,36 @@ async function loadTrendingNews(){
         );
 
         item.innerHTML = `
-          <img
-            src="${article.urlToImage || 'assets/images/fallback.jpg'}"
-            alt="Trending"
-            onerror="this.src='assets/images/fallback.jpg'"
+          <h4>
+            ${article.title}
+          </h4>
+
+          <a
+            href="${article.url}"
+            target="_blank"
           >
-
-          <div class="trending-content">
-
-            <h4>
-              ${article.title}
-            </h4>
-
-            <p>
-              ${
-                article.description
-                ? article.description.substring(0, 80) + "..."
-                : "No description available"
-              }
-            </p>
-
-            <a
-              href="${article.url}"
-              target="_blank"
-            >
-              Read More
-            </a>
-
-          </div>
+            Read More
+          </a>
         `;
 
-        trendingContainer.appendChild(item);
+        trendingContainer
+          .appendChild(item);
 
       });
 
   }catch(error){
 
     console.log(
-      "Trending News Error:",
+      "Trending Error:",
       error
     );
 
   }
 
 }
+
+
+
 /* =========================
    SEARCH NEWS
 ========================= */
@@ -235,21 +226,35 @@ async function searchNews(query){
 }
 
 /* =========================
-   FETCH BREAKING NEWS
+   BREAKING NEWS
 ========================= */
-async function fetchBreakingNews(){
+
+async function loadBreakingNews(){
+
+  if(!breakingNews) return;
 
   try{
 
-    const response =
-      await fetch(
-        `${BASE_URL}?country=ng&pageSize=10`
-      );
+    const articles =
+      await fetchBreakingNews();
 
-    const data =
-      await handleResponse(response);
+    if(!articles.length){
 
-    return data.articles || [];
+      breakingNews.innerHTML =
+        "No breaking news available";
+
+      return;
+
+    }
+
+    const headlines =
+      articles
+        .slice(0, 10)
+        .map(article => article.title)
+        .join(" 🔥 ");
+
+    breakingNews.innerHTML =
+      headlines;
 
   }catch(error){
 
@@ -258,12 +263,12 @@ async function fetchBreakingNews(){
       error
     );
 
-    return [];
+    breakingNews.innerHTML =
+      "Unable to load breaking news";
 
   }
 
 }
-
 /* =========================
    FETCH TRENDING NEWS
 ========================= */
